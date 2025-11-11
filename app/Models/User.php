@@ -21,8 +21,24 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'level',
+        'branch_id',
     ];
 
+    public function setBranchIdAttribute($value)
+    {
+        $this->attributes['branch_id'] = $value === '' ? null : $value;
+    }
+
+    public function setLevelAttribute($value)
+    {
+        $this->attributes['level'] = $value === '' ? null : $value;
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }   
     /**
      * The attributes that should be hidden for serialization.
      *

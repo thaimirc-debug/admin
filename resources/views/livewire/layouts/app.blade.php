@@ -3,10 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>{{ $title ?? 'Page Title' }}</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}?tme={{base64_encode(now())}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <title>@stack('title', 'Admin Panel')</title>
+    <meta name="description" content="@stack('description', 'ระบบจัดการเว็บไซต์')">
+    <meta name="keywords" content="@stack('keywords','OKmini, Admin Panel')">
+    @stack('styles')
     </head>
     <body>
-        {{ $slot }}
+        @stack('navbar')
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        @stack('sidebar')
+                    </div>
+                    <div class="col-lg-9">
+                        {{ $slot ?? '' }}
+                    </div>
+                </div>
+            </div>
+        </main>
+        @stack('scripts')
     </body>
 </html>
