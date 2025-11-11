@@ -145,8 +145,14 @@
                                     {{ \Carbon\Carbon::parse($customer->start_date)->format('d-m') . '-' .
                                     (\Carbon\Carbon::parse($customer->start_date)->year + 543) }}
                                     ถึง
+                                    @if($customer->packet == 4)
                                     {{ \Carbon\Carbon::parse($customer->start_date)->addYear()->format('d-m') . '-' .
+                                    (\Carbon\Carbon::parse($customer->start_date)->addYear()->year + 543) }}
+                                    @else {
+                                    {{ \Carbon\Carbon::parse($customer->start_date)->addYear(3)->format('d-m') . '-' .
                                     (\Carbon\Carbon::parse($customer->start_date)->addYear(3)->year + 543) }}
+                                    }
+                                    @endif
                                 </strong>
                             </p>
                         </div>
