@@ -146,7 +146,7 @@
                                     (\Carbon\Carbon::parse($customer->start_date)->year + 543) }}
                                     ถึง
                                     {{ \Carbon\Carbon::parse($customer->start_date)->addYear()->format('d-m') . '-' .
-                                    (\Carbon\Carbon::parse($customer->start_date)->addYear()->year + 543) }}
+                                    (\Carbon\Carbon::parse($customer->start_date)->addYear(3)->year + 543) }}
                                 </strong>
                             </p>
                         </div>
@@ -156,6 +156,15 @@
                                 <p>
                                     กำจัดปลวกด้วยระบบสถานีเหยื่อภายในตัวบ้าน เข้าตรวจสถานีเหยื่อทุก 15วัน (จนปลวกตายยกรัง) 
                                     ฉีดพ่นน้ำยาป้องกันปลวก รอบๆบ้าน ทุก 3เดือน ตลอดสัญญา 1ปี
+                                </p>
+                                @elseif($customer->packet == 4)
+                                <p>
+                                    บริการกำจัดปลวกด้วยน้ำยาไร้กลิ่นโดยการฉีดอัดน้ำยาในครั้งแรกและป้องกันภายในและรอบๆ
+                                    ตัวบ้าน
+                                </p>
+                                <p>
+                                    มีบริการตรวจเช็คฉีดพ่นภายในและภายนอกบ้าน ภายในระยะเวลากำหนด
+                                    รวม 4ครั้ง/1ปี เป็นเวลา 3ปีตามแผนงานด้านหลัง 
                                 </p>
                                 @else
                                 <p>

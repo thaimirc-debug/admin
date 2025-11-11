@@ -269,6 +269,7 @@
                                     <option value="1">ฉีดพ่นยาน้ำยา 2ครั้ง/1ปี</option>
                                     <option value="2">ฉีดพ่นยาน้ำยา 4ครั้ง/1ปี</option>
                                     <option value="3">วางเหยื่อ 2 ระบบ</option>
+                                    <option value="4">ฉีดพ่นยาน้ำยา 4ครั้ง/1ปี เป็นเวลา 3ปี</option>
                                 </select>
                                 @error('packet') <span class="text-danger italic">{{ $message }}</span> @enderror
                             </div>
