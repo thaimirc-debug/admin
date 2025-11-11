@@ -266,7 +266,7 @@ class CustomerManager extends Component
         'province'        => 'nullable|string|max:100',
         'phones.*'        => 'nullable|string|max:20',
         'start_date'      => 'nullable|date',
-        'job_description' => 'nullable|string|max:255',
+        'job_description' => 'nullable|string',
         'packet'          => 'nullable|numeric|min:0',
         'price'           => 'nullable|numeric|min:0',
         'branch_id'       => 'required|exists:branches,id',
